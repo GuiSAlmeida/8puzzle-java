@@ -15,8 +15,7 @@ public class Tabuleiro {
 	private Campo campoCimaDireita;
 	private Campo campoCimaEsquerda;
 
-	private Integer jogadas = 0;
-	private String jogador;
+	private Integer idTabuleiro;
 
 	private List<TabuleiroObservador> observadores = new ArrayList<>();
 
@@ -113,13 +112,13 @@ public class Tabuleiro {
 	public void setCampoCimaEsquerda(Integer numero) {
 		this.campoCimaEsquerda.setNumero(numero);
 	}
-
-	public Integer getJogadas() {
-		return jogadas;
+	
+	public Integer getIdTabuleiro() {
+		return idTabuleiro;
 	}
 
-	public void setJogadas(Integer jogadas) {
-		this.jogadas = jogadas;
+	public void setIdTabuleiro(Integer idTabuleiro) {
+		this.idTabuleiro = idTabuleiro;
 	}
 
 	public void gerarCampos() {
@@ -170,14 +169,6 @@ public class Tabuleiro {
 
 		campoBaixoDireita.setCampoDeCima(campoMeioDireita);
 		campoBaixoDireita.setCampoDaEsquerda(campoBaixoMeio);
-	}
-
-	public String getJogador() {
-		return jogador;
-	}
-
-	public void setJogador(String jogador) {
-		this.jogador = jogador;
 	}
 
 	@Override

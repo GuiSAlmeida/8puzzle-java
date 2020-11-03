@@ -27,3 +27,11 @@ ALTER TABLE jogador
 	REFERENCES tabuleiro (id)
 	ON UPDATE CASCADE
 	ON DELETE NO ACTION;
+
+
+SELECT * FROM tabuleiro t
+INNER JOIN jogador j
+ON t.id = j.id_tabuleiro
+WHERE j.id = 1;
+
+select * from jogador;

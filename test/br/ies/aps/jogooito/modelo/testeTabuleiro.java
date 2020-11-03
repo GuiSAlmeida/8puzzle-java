@@ -16,4 +16,6 @@ public class testeTabuleiro {
 	public void testarPosicaoDoPonteiro() {
 		assertEquals(0, tabuleiro.getPonteiro().getNumero());		
 	}
+	
+	
 }

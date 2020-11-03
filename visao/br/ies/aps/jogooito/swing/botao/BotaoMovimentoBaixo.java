@@ -1,7 +1,11 @@
 package br.ies.aps.jogooito.swing.botao;
 
 import java.awt.event.ActionEvent;
+import java.sql.SQLException;
 
+import br.ies.aps.jogooito.banco.JogadorDAO;
+import br.ies.aps.jogooito.banco.TabuleiroDAO;
+import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
 import br.ies.aps.jogooito.swing.ControleTabuleiro;
 import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
@@ -10,23 +14,31 @@ import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
 public class BotaoMovimentoBaixo extends BotaoMovimento {
 
 	public BotaoMovimentoBaixo(String posicao, Tabuleiro tabuleiro, TelaTabuleiro telaTabuleiro,
-			ControleTabuleiro controleTabuleiro) {
-		super(posicao, tabuleiro, telaTabuleiro, controleTabuleiro);
+			ControleTabuleiro controleTabuleiro, Jogador jogador) {
+		super(posicao, tabuleiro, telaTabuleiro, controleTabuleiro, jogador);
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent event) {
-		alteraEstadoTabuleiro();
+		try {
+			alteraEstadoTabuleiro();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	@Override
-	public void alteraEstadoTabuleiro() {
+	public void alteraEstadoTabuleiro() throws SQLException {
 		this.getTabuleiroControle().moverPraBaixo();
 		this.getTelaTabuleiro().atualizarTelaTabuleiro(this.getTabuleiro());
-		this.getTabuleiro().setJogadas(this.getTabuleiro().getJogadas() + 1);
-//		this.getControleTabuleiro().atualizaJogadas(this.getTabuleiro().getJogadas());
-//		
-//		this.getControleTabuleiro().finalizaJogadas(this.getTabuleiro().getJogadas());
+		Integer jogadas = this.getJogador().getJogadas();
+		this.getJogador().setJogadas(jogadas + 1);
+
+		TabuleiroDAO tabuleiroDAO = new TabuleiroDAO(this.getTabuleiro());
+		tabuleiroDAO.atualizaBanco(this.getTabuleiro().getIdTabuleiro());
+		
+		JogadorDAO jogadorDAO = new JogadorDAO(this.getJogador());
+		jogadorDAO.atualizaBanco(this.getJogador().getIdJogador());
 	}
 
 }
