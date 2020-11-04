@@ -7,14 +7,14 @@ import br.ies.aps.jogooito.banco.JogadorDAO;
 import br.ies.aps.jogooito.banco.TabuleiroDAO;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
-import br.ies.aps.jogooito.swing.ControleTabuleiro;
+import br.ies.aps.jogooito.swing.tela.TelaControle;
 import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
 
 @SuppressWarnings("serial")
 public class BotaoMovimentoBaixo extends BotaoMovimento {
 
 	public BotaoMovimentoBaixo(String posicao, Tabuleiro tabuleiro, TelaTabuleiro telaTabuleiro,
-			ControleTabuleiro controleTabuleiro, Jogador jogador) {
+			TelaControle controleTabuleiro, Jogador jogador) {
 		super(posicao, tabuleiro, telaTabuleiro, controleTabuleiro, jogador);
 	}
 

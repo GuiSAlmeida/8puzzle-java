@@ -8,7 +8,7 @@ import javax.swing.JButton;
 import br.ies.aps.jogooito.controle.TabuleiroControle;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
-import br.ies.aps.jogooito.swing.ControleTabuleiro;
+import br.ies.aps.jogooito.swing.tela.TelaControle;
 import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
 
 @SuppressWarnings("serial")
@@ -17,10 +17,10 @@ public abstract class BotaoMovimento extends JButton implements ActionListener {
 	private Jogador jogador;
 	private TabuleiroControle tabuleiroControle;
 	private TelaTabuleiro telaTabuleiro;
-	private ControleTabuleiro controleTabuleiro;
+	private TelaControle controleTabuleiro;
 
 	public BotaoMovimento(String posicao, Tabuleiro tabuleiro, TelaTabuleiro telaTabuleiro,
-			ControleTabuleiro controleTabuleiro, Jogador jogador) {
+			TelaControle controleTabuleiro, Jogador jogador) {
 		setText(posicao);
 		addActionListener(this);
 		setTabuleiro(tabuleiro);
@@ -64,11 +64,11 @@ public abstract class BotaoMovimento extends JButton implements ActionListener {
 		this.telaTabuleiro = telaTabuleiro;
 	}
 
-	public ControleTabuleiro getControleTabuleiro() {
+	public TelaControle getControleTabuleiro() {
 		return controleTabuleiro;
 	}
 
-	public void setControleTabuleiro(ControleTabuleiro controleTabuleiro) {
+	public void setControleTabuleiro(TelaControle controleTabuleiro) {
 		this.controleTabuleiro = controleTabuleiro;
 	}
 }

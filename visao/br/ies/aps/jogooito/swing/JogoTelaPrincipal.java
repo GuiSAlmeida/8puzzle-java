@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 import br.ies.aps.jogooito.banco.SalvaNovoJogoBancoDAO;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
+import br.ies.aps.jogooito.swing.tela.TelaControle;
 import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
 
 @SuppressWarnings("serial")
@@ -30,14 +31,14 @@ public class JogoTelaPrincipal extends JFrame {
 	}
 
 	private void organizarLayout(Tabuleiro tabuleiro) {
-		TelaTabuleiro tela = new TelaTabuleiro(tabuleiro);
+		TelaTabuleiro telaTabuleiro = new TelaTabuleiro(tabuleiro);
 
-		ControleTabuleiro controle = new ControleTabuleiro(tabuleiro, tela, jogador);
-		addKeyListener(controle);
+		TelaControle telaControle = new TelaControle(tabuleiro, telaTabuleiro, jogador);
+		addKeyListener(telaControle);
 
-		GridBagLayout gridBagLayout = (GridBagLayout) controle.getLayout();
+		GridBagLayout gridBagLayout = (GridBagLayout) telaControle.getLayout();
 		gridBagLayout.columnWidths = new int[] { 0, 200, 0, 0, 0, 0, 0 };
-		controle.setPreferredSize(new Dimension(600, 100));
+		telaControle.setPreferredSize(new Dimension(600, 100));
 
 		getContentPane().setLayout(new BorderLayout());
 		setTitle("Jogo do 8");
@@ -47,8 +48,8 @@ public class JogoTelaPrincipal extends JFrame {
 		setVisible(true);
 		setFocusable(true);
 
-		add(tela, BorderLayout.CENTER);
-		add(controle, BorderLayout.SOUTH);
+		add(telaTabuleiro, BorderLayout.CENTER);
+		add(telaControle, BorderLayout.SOUTH);
 	}
 
 	private void salvaNovoJogoBanco(Tabuleiro tabuleiro) {

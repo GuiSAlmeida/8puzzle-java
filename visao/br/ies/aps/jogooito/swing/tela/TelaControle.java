@@ -1,4 +1,4 @@
-package br.ies.aps.jogooito.swing;
+package br.ies.aps.jogooito.swing.tela;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,10 +18,9 @@ import br.ies.aps.jogooito.swing.botao.BotaoMovimentoBaixo;
 import br.ies.aps.jogooito.swing.botao.BotaoMovimentoCima;
 import br.ies.aps.jogooito.swing.botao.BotaoMovimentoDireita;
 import br.ies.aps.jogooito.swing.botao.BotaoMovimentoEsquerda;
-import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
 
 @SuppressWarnings("serial")
-public class ControleTabuleiro extends JPanel implements KeyListener, TabuleiroObservador {
+public class TelaControle extends JPanel implements KeyListener, TabuleiroObservador {
 	private Tabuleiro tabuleiro;
 	private Jogador jogador;
 	private TelaTabuleiro telaTabuleiro;
@@ -31,7 +30,7 @@ public class ControleTabuleiro extends JPanel implements KeyListener, TabuleiroO
 	private BotaoMovimentoDireita botaoDireita;
 	private BotaoMovimentoEsquerda botaoEsquerda;
 
-	public ControleTabuleiro(Tabuleiro tabuleiro, TelaTabuleiro telaTabuleiro, Jogador jogador) {
+	public TelaControle(Tabuleiro tabuleiro, TelaTabuleiro telaTabuleiro, Jogador jogador) {
 		this.tabuleiro = tabuleiro;
 		this.telaTabuleiro = telaTabuleiro;
 		this.jogador = jogador;

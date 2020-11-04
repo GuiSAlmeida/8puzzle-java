@@ -13,7 +13,6 @@ public class SalvaNovoJogoBancoDAO {
 	private JogadorDAO jogadorDAO;
 	private Integer idJogador;
 
-
 	public SalvaNovoJogoBancoDAO(Tabuleiro tabuleiro, Jogador jogador) {
 		this.tabuleiro = tabuleiro;
 		this.jogador = jogador;
