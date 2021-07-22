@@ -170,13 +170,29 @@ public class Tabuleiro {
 		campoBaixoDireita.setCampoDeCima(campoMeioDireita);
 		campoBaixoDireita.setCampoDaEsquerda(campoBaixoMeio);
 	}
+	
+	public Boolean verificaFimJogo() {
+		if (getCampoCimaEsquerda().equals(Integer.valueOf(1))
+			&& getCampoCimaMeio().equals(Integer.valueOf(2))
+			&& getCampoCimaDireita().equals(Integer.valueOf(3))
+			&& getCampoMeioEsquerda().equals(Integer.valueOf(4))
+			&& getCampoMeio().equals(Integer.valueOf(5))
+			&& getCampoMeioDireita().equals(Integer.valueOf(6))
+			&& getCampoBaixoEsquerda().equals(Integer.valueOf(7))
+			&& getCampoBaixoMeio().equals(Integer.valueOf(8))
+			&& getCampoBaixoDireita().equals(Integer.valueOf(0))) {
+				return true;
+		}
+		return false;
+	}
 
 	@Override
 	public String toString() {
-
-		return String.format("|%d %d %d|\n|%d %d %d|\n|%d %d %d|", campoCimaEsquerda.getNumero(),
-				campoCimaMeio.getNumero(), campoCimaDireita.getNumero(), campoMeioEsquerda.getNumero(),
-				campoMeio.getNumero(), campoMeioDireita.getNumero(), campoBaixoEsquerda.getNumero(),
-				campoBaixoMeio.getNumero(), campoBaixoDireita.getNumero());
+		return String.format("|%d %d %d|\n|%d %d %d|\n|%d %d %d|", 
+				campoCimaEsquerda.getNumero(), campoCimaMeio.getNumero(), 
+				campoCimaDireita.getNumero(), campoMeioEsquerda.getNumero(),
+				campoMeio.getNumero(), campoMeioDireita.getNumero(), 
+				campoBaixoEsquerda.getNumero(), campoBaixoMeio.getNumero(), 
+				campoBaixoDireita.getNumero());
 	}
 }

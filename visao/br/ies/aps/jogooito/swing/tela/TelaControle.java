@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import br.ies.aps.jogooito.banco.JogadorDAO;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
 import br.ies.aps.jogooito.modelo.TabuleiroObservador;
@@ -88,17 +89,16 @@ public class TelaControle extends JPanel implements KeyListener, TabuleiroObserv
 	}
 
 	public void verificaFimJogo(Tabuleiro tabuleiro) {
-		if (tabuleiro.getCampoCimaEsquerda().equals(Integer.valueOf(1))
-				&& tabuleiro.getCampoCimaMeio().equals(Integer.valueOf(2))
-				&& tabuleiro.getCampoCimaDireita().equals(Integer.valueOf(3))
-				&& tabuleiro.getCampoMeioEsquerda().equals(Integer.valueOf(4))
-				&& tabuleiro.getCampoMeio().equals(Integer.valueOf(5))
-				&& tabuleiro.getCampoMeioDireita().equals(Integer.valueOf(6))
-				&& tabuleiro.getCampoBaixoEsquerda().equals(Integer.valueOf(7))
-				&& tabuleiro.getCampoBaixoMeio().equals(Integer.valueOf(8))
-				&& tabuleiro.getCampoBaixoDireita().equals(Integer.valueOf(0))) {
+		if (tabuleiro.verificaFimJogo()) {
 			finalizaJogadas(jogador.getJogadas() + 1);
 			jogador.setGanhador(true);
+			JogadorDAO jogadorDAO = new JogadorDAO(jogador);
+			try {
+				jogadorDAO.atualizaBanco(jogador.getIdJogador());
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} else {
 			atualizaJogadas(jogador.getJogadas() + 1);
 		}
@@ -116,41 +116,25 @@ public class TelaControle extends JPanel implements KeyListener, TabuleiroObserv
 		mapa.put(KeyEvent.VK_DOWN, new Runnable() {
 			@Override
 			public void run() {
-				try {
-					botaoBaixo.alteraEstadoTabuleiro();
-				} catch (SQLException e) {
-					throw new RuntimeException(e);
-				}
+				botaoBaixo.alteraEstadoTabuleiro();
 			}
 		});
 		mapa.put(KeyEvent.VK_UP, new Runnable() {
 			@Override
 			public void run() {
-				try {
-					botaoCima.alteraEstadoTabuleiro();
-				} catch (SQLException e) {
-					throw new RuntimeException(e);
-				}
+				botaoCima.alteraEstadoTabuleiro();
 			}
 		});
 		mapa.put(KeyEvent.VK_RIGHT, new Runnable() {
 			@Override
 			public void run() {
-				try {
-					botaoDireita.alteraEstadoTabuleiro();
-				} catch (SQLException e) {
-					throw new RuntimeException(e);
-				}
+				botaoDireita.alteraEstadoTabuleiro();
 			}
 		});
 		mapa.put(KeyEvent.VK_LEFT, new Runnable() {
 			@Override
 			public void run() {
-				try {
-					botaoEsquerda.alteraEstadoTabuleiro();
-				} catch (SQLException e) {
-					throw new RuntimeException(e);
-				}
+				botaoEsquerda.alteraEstadoTabuleiro();
 			}
 		});
 
