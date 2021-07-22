@@ -1,17 +1,17 @@
-package br.ies.aps.jogooito.swing.botao;
+package br.ies.aps.jogooito.view.swing.botao;
 
 import java.awt.event.ActionEvent;
 
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
-import br.ies.aps.jogooito.swing.tela.TelaControle;
-import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
+import br.ies.aps.jogooito.view.swing.tela.TelaControle;
+import br.ies.aps.jogooito.view.swing.tela.TelaTabuleiro;
 
 @SuppressWarnings("serial")
-public class BotaoMovimentoCima extends BotaoMovimento {
+public class BotaoMovimentoEsquerda extends BotaoMovimento {
 
-	public BotaoMovimentoCima(String posicao, Tabuleiro tabuleiro, 
-		TelaTabuleiro telaTabuleiro, TelaControle controleTabuleiro, Jogador jogador) {
+	public BotaoMovimentoEsquerda(String posicao, Tabuleiro tabuleiro, TelaTabuleiro telaTabuleiro,
+			TelaControle controleTabuleiro, Jogador jogador) {
 		super(posicao, tabuleiro, telaTabuleiro, controleTabuleiro, jogador);
 	}
 
@@ -22,9 +22,10 @@ public class BotaoMovimentoCima extends BotaoMovimento {
 
 	@Override
 	public void alteraEstadoTabuleiro() {
-		this.getTabuleiroControle().moverPraCima();
+		this.getTabuleiroControle().moverPraEsquerda();
 		this.getTelaTabuleiro().atualizarTelaTabuleiro(this.getTabuleiro());
 		Integer jogadas = this.getJogador().getJogadas();
 		this.getJogador().setJogadas(jogadas + 1);
 	};
+
 }

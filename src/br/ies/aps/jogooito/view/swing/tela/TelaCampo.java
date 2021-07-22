@@ -1,4 +1,4 @@
-package br.ies.aps.jogooito.swing.tela;
+package br.ies.aps.jogooito.view.swing.tela;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -8,11 +8,11 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 @SuppressWarnings("serial")
-public class CampoTela extends JLabel {
+public class TelaCampo extends JLabel {
 
 	private JLabel campoTela;
 
-	public CampoTela(Integer numero) {
+	public TelaCampo(Integer numero) {
 		this.campoTela = new JLabel(numero.toString());
 		this.campoTela.setForeground(Color.BLACK);
 		this.campoTela.setHorizontalAlignment(SwingConstants.CENTER);

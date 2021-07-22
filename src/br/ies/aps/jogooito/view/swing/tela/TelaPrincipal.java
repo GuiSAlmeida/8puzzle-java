@@ -1,4 +1,4 @@
-package br.ies.aps.jogooito.swing;
+package br.ies.aps.jogooito.view.swing.tela;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -13,25 +13,19 @@ import br.ies.aps.jogooito.banco.SalvaNovoJogoBancoDAO;
 import br.ies.aps.jogooito.banco.TabuleiroDAO;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
-import br.ies.aps.jogooito.swing.tela.TelaControle;
-import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
 
 @SuppressWarnings("serial")
-public class JogoTelaPrincipal extends JFrame {
+public class TelaPrincipal extends JFrame {
 	private Tabuleiro tabuleiro;
 	private Jogador jogador;
 
-	public JogoTelaPrincipal() {
+	public void IniciaJogo() {
 		String JogadorNome = JOptionPane.showInputDialog("Digite seu nome para jogar:");
 		jogador = new Jogador(JogadorNome);
 		tabuleiro = new Tabuleiro();
 		organizarLayout(this.tabuleiro);
 		salvaNovoJogoBanco(this.tabuleiro);
 		finalizaJogo(this.tabuleiro, this.jogador);
-	}
-
-	public static void main(String[] args) {
-		new JogoTelaPrincipal();
 	}
 
 	private void organizarLayout(Tabuleiro tabuleiro) {

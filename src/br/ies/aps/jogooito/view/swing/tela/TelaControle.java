@@ -1,4 +1,4 @@
-package br.ies.aps.jogooito.swing.tela;
+package br.ies.aps.jogooito.view.swing.tela;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -15,10 +15,10 @@ import br.ies.aps.jogooito.banco.JogadorDAO;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
 import br.ies.aps.jogooito.modelo.TabuleiroObservador;
-import br.ies.aps.jogooito.swing.botao.BotaoMovimentoBaixo;
-import br.ies.aps.jogooito.swing.botao.BotaoMovimentoCima;
-import br.ies.aps.jogooito.swing.botao.BotaoMovimentoDireita;
-import br.ies.aps.jogooito.swing.botao.BotaoMovimentoEsquerda;
+import br.ies.aps.jogooito.view.swing.botao.BotaoMovimentoBaixo;
+import br.ies.aps.jogooito.view.swing.botao.BotaoMovimentoCima;
+import br.ies.aps.jogooito.view.swing.botao.BotaoMovimentoDireita;
+import br.ies.aps.jogooito.view.swing.botao.BotaoMovimentoEsquerda;
 
 @SuppressWarnings("serial")
 public class TelaControle extends JPanel implements KeyListener, TabuleiroObservador {

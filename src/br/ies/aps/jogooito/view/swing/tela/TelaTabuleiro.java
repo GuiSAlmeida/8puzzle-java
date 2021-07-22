@@ -1,4 +1,4 @@
-package br.ies.aps.jogooito.swing.tela;
+package br.ies.aps.jogooito.view.swing.tela;
 
 import java.awt.GridLayout;
 
@@ -8,45 +8,45 @@ import br.ies.aps.jogooito.modelo.Tabuleiro;
 
 @SuppressWarnings("serial")
 public class TelaTabuleiro extends JPanel {
-	private CampoTela campoCimaEsquerda;
-	private CampoTela campoCimaMeio;
-	private CampoTela campoCimaDireita;
-	private CampoTela campoMeioEsquerda;
-	private CampoTela campoMeio;
-	private CampoTela campoMeioDireita;
-	private CampoTela campoBaixoEsquerda;
-	private CampoTela campoBaixoMeio;
-	private CampoTela campoBaixoDireita;
+	private TelaCampo campoCimaEsquerda;
+	private TelaCampo campoCimaMeio;
+	private TelaCampo campoCimaDireita;
+	private TelaCampo campoMeioEsquerda;
+	private TelaCampo campoMeio;
+	private TelaCampo campoMeioDireita;
+	private TelaCampo campoBaixoEsquerda;
+	private TelaCampo campoBaixoMeio;
+	private TelaCampo campoBaixoDireita;
 
 	public TelaTabuleiro(Tabuleiro tabuleiro) {
 
 		setLayout(new GridLayout(3, 3));
 
-		campoCimaEsquerda = new CampoTela(tabuleiro.getCampoCimaEsquerda());
+		campoCimaEsquerda = new TelaCampo(tabuleiro.getCampoCimaEsquerda());
 		add(campoCimaEsquerda.getCampoTela());
 
-		campoCimaMeio = new CampoTela(tabuleiro.getCampoCimaMeio());
+		campoCimaMeio = new TelaCampo(tabuleiro.getCampoCimaMeio());
 		add(campoCimaMeio.getCampoTela());
 
-		campoCimaDireita = new CampoTela(tabuleiro.getCampoCimaDireita());
+		campoCimaDireita = new TelaCampo(tabuleiro.getCampoCimaDireita());
 		add(campoCimaDireita.getCampoTela());
 
-		campoMeioEsquerda = new CampoTela(tabuleiro.getCampoMeioEsquerda());
+		campoMeioEsquerda = new TelaCampo(tabuleiro.getCampoMeioEsquerda());
 		add(campoMeioEsquerda.getCampoTela());
 
-		campoMeio = new CampoTela(tabuleiro.getCampoMeio());
+		campoMeio = new TelaCampo(tabuleiro.getCampoMeio());
 		add(campoMeio.getCampoTela());
 
-		campoMeioDireita = new CampoTela(tabuleiro.getCampoMeioDireita());
+		campoMeioDireita = new TelaCampo(tabuleiro.getCampoMeioDireita());
 		add(campoMeioDireita.getCampoTela());
 
-		campoBaixoEsquerda = new CampoTela(tabuleiro.getCampoBaixoEsquerda());
+		campoBaixoEsquerda = new TelaCampo(tabuleiro.getCampoBaixoEsquerda());
 		add(campoBaixoEsquerda.getCampoTela());
 
-		campoBaixoMeio = new CampoTela(tabuleiro.getCampoBaixoMeio());
+		campoBaixoMeio = new TelaCampo(tabuleiro.getCampoBaixoMeio());
 		add(campoBaixoMeio.getCampoTela());
 
-		campoBaixoDireita = new CampoTela(tabuleiro.getCampoBaixoDireita());
+		campoBaixoDireita = new TelaCampo(tabuleiro.getCampoBaixoDireita());
 		add(campoBaixoDireita.getCampoTela());
 	}
 

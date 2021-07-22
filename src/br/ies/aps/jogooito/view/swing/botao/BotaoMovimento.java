@@ -1,4 +1,4 @@
-package br.ies.aps.jogooito.swing.botao;
+package br.ies.aps.jogooito.view.swing.botao;
 
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -8,8 +8,8 @@ import javax.swing.JButton;
 import br.ies.aps.jogooito.controle.TabuleiroControle;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
-import br.ies.aps.jogooito.swing.tela.TelaControle;
-import br.ies.aps.jogooito.swing.tela.TelaTabuleiro;
+import br.ies.aps.jogooito.view.swing.tela.TelaControle;
+import br.ies.aps.jogooito.view.swing.tela.TelaTabuleiro;
 
 @SuppressWarnings("serial")
 public abstract class BotaoMovimento extends JButton implements ActionListener {
