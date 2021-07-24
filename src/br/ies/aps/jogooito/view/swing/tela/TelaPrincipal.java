@@ -8,11 +8,11 @@ import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import br.ies.aps.jogooito.banco.JogadorDAO;
-import br.ies.aps.jogooito.banco.SalvaNovoJogoBancoDAO;
-import br.ies.aps.jogooito.banco.TabuleiroDAO;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
+import br.ies.aps.jogooito.modelo.DAO.JogadorDAO;
+import br.ies.aps.jogooito.modelo.DAO.SalvaNovoJogoBancoDAO;
+import br.ies.aps.jogooito.modelo.DAO.TabuleiroDAO;
 
 @SuppressWarnings("serial")
 public class TelaPrincipal extends JFrame {

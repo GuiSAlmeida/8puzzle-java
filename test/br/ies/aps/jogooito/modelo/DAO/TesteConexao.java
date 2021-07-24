@@ -1,9 +1,11 @@
-package br.ies.aps.jogooito.banco;
+package br.ies.aps.jogooito.modelo.DAO;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 import org.junit.Test;
+
+import br.ies.aps.jogooito.modelo.DAO.FabricaConexao;
 
 public class TesteConexao {
 

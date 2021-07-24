@@ -11,10 +11,10 @@ import java.util.Map;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import br.ies.aps.jogooito.banco.JogadorDAO;
 import br.ies.aps.jogooito.modelo.Jogador;
 import br.ies.aps.jogooito.modelo.Tabuleiro;
 import br.ies.aps.jogooito.modelo.TabuleiroObservador;
+import br.ies.aps.jogooito.modelo.DAO.JogadorDAO;
 import br.ies.aps.jogooito.view.swing.botao.BotaoMovimentoBaixo;
 import br.ies.aps.jogooito.view.swing.botao.BotaoMovimentoCima;
 import br.ies.aps.jogooito.view.swing.botao.BotaoMovimentoDireita;
@@ -137,7 +137,8 @@ public class TelaControle extends JPanel implements KeyListener, TabuleiroObserv
 				botaoEsquerda.alteraEstadoTabuleiro();
 			}
 		});
-
+		
+		// TODO verificar se há tecla pressionada no hashmap
 		mapa.get(event.getKeyCode()).run();
 	}
 

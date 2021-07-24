@@ -28,7 +28,7 @@ public class TesteControleTabuleiro {
 		tabuleiroControle.moverPraEsquerda();
 		assertEquals(posicaoEsquerda, tabuleiroControle.getTabuleiro().getPonteiro().getCampoDaDireita().getNumero());
 	}
-
+	
 	@Test
 	public void moverPonteiroTabuleiroParaDireita() {
 		Integer posicaoDireita = tabuleiroControle.getTabuleiro().getPonteiro().getCampoDaDireita().getNumero();
@@ -42,6 +42,4 @@ public class TesteControleTabuleiro {
 		tabuleiroControle.moverPraBaixo();
 		assertEquals(posicaoAbaixo, tabuleiroControle.getTabuleiro().getPonteiro().getCampoDeCima().getNumero());
 	}
-	
-
 }

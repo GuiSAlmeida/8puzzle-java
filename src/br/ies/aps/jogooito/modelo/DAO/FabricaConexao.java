@@ -1,4 +1,4 @@
-package br.ies.aps.jogooito.banco;
+package br.ies.aps.jogooito.modelo.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
