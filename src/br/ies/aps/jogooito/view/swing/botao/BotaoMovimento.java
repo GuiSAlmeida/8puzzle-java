@@ -19,8 +19,8 @@ public abstract class BotaoMovimento extends JButton implements ActionListener {
 	private TelaTabuleiro telaTabuleiro;
 	private TelaControle controleTabuleiro;
 
-	public BotaoMovimento(String posicao, Tabuleiro tabuleiro, TelaTabuleiro telaTabuleiro,
-			TelaControle controleTabuleiro, Jogador jogador) {
+	public BotaoMovimento(String posicao, Tabuleiro tabuleiro, 
+		TelaTabuleiro telaTabuleiro, TelaControle controleTabuleiro, Jogador jogador) {
 		setText(posicao);
 		addActionListener(this);
 		setTabuleiro(tabuleiro);
@@ -30,7 +30,7 @@ public abstract class BotaoMovimento extends JButton implements ActionListener {
 		setControleTabuleiro(controleTabuleiro);
 	}
 
-	public abstract void alteraEstadoTabuleiro() throws SQLException;
+	public abstract void alteraEstadoTabuleiro();
 
 	public TabuleiroControle getTabuleiroControle() {
 		return tabuleiroControle;

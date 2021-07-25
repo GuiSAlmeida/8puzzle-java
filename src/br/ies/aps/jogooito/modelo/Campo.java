@@ -1,12 +1,12 @@
 package br.ies.aps.jogooito.modelo;
 
 public class Campo {
-	protected Integer numero;
+	private Integer numero;
 
-	protected Campo cima;
-	protected Campo baixo;
-	protected Campo esquerda;
-	protected Campo direita;
+	private Campo cima;
+	private Campo baixo;
+	private Campo esquerda;
+	private Campo direita;
 	
 	private Tabuleiro tabuleiro;
 
@@ -15,8 +15,7 @@ public class Campo {
 		this.cima = this;
 		this.baixo = this;
 		this.esquerda = this;
-		this.direita = this;
-		
+		this.direita = this;		
 		this.tabuleiro = tabuleiro;
 	}
 
