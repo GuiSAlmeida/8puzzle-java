@@ -54,32 +54,31 @@ public class TelaPrincipal extends JFrame {
 		tabuleiro.setIdTabuleiro(salvaNovoJogoBanco.getIdTabuleiro());
 		jogador.setIdJogador(salvaNovoJogoBanco.getIdJogador());
 	}
-	
-	private void finalizaJogo(Tabuleiro tabuleiro, Jogador jogador) {		
+
+	private void finalizaJogo(Tabuleiro tabuleiro, Jogador jogador) {
 		addWindowListener(new java.awt.event.WindowAdapter() {
-		    @Override
-		    public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-		        if (JOptionPane.showConfirmDialog(null, 
-		            "Tem certeza que quer sair do jogo?", "Fechar janela?", 
-		            JOptionPane.YES_NO_OPTION,
-		            JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION){
-		    		try {
-		    			TabuleiroDAO tabuleiroDAO = new TabuleiroDAO(tabuleiro);
-		    			JogadorDAO jogadorDAO = new JogadorDAO(jogador);
-		    			tabuleiroDAO.atualizaBanco(tabuleiro.getIdTabuleiro());
+			@Override
+			public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+				if (JOptionPane.showConfirmDialog(null,
+						"Tem certeza que quer sair do jogo?", "Fechar janela?",
+						JOptionPane.YES_NO_OPTION,
+						JOptionPane.QUESTION_MESSAGE) == JOptionPane.YES_OPTION) {
+					try {
+						TabuleiroDAO tabuleiroDAO = new TabuleiroDAO(tabuleiro);
+						JogadorDAO jogadorDAO = new JogadorDAO(jogador);
+						tabuleiroDAO.atualizaBanco(tabuleiro.getIdTabuleiro());
 						jogadorDAO.atualizaBanco(jogador.getIdJogador());
-						
+
 						setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-			            System.exit(0);
+						System.exit(0);
 					} catch (SQLException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}		        	
-		        } else {
-		        	setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
-		        }
-		    }
-		});		
+					}
+				} else {
+					setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+				}
+			}
+		});
 	}
 }
-
